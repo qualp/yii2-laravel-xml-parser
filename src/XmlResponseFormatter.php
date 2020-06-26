@@ -40,6 +40,8 @@ class XmlResponseFormatter
                     $child->appendChild(new DOMText($this->formatScalarValue($value)));
                 }
             }
+        } else {
+            $element->appendChild(new DOMText($this->formatScalarValue($data)));
         }
     }
 
