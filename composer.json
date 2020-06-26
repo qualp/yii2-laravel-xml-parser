@@ -19,5 +19,12 @@
         "psr-4": {
             "Qualp\\Yii2XMLParser\\Tests\\": "tests/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Qualp\\Yii2XMLParser\\Providers\\Yii2XMLParserServiceProvider"
+            ]
+        }
     }
 }
