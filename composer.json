@@ -1,0 +1,23 @@
+{
+    "name": "qualp/yii2-xml-parser",
+    "description": "The Yii2 Framework XML response parser for laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mateus Junges",
+            "email": "mateus@junges.dev"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Qualp\\Yii2XMLParser\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Qualp\\Yii2XMLParser\\Tests\\": "tests/"
+        }
+    }
+}
