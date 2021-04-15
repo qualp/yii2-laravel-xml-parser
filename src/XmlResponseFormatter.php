@@ -6,7 +6,6 @@ use DOMDocument;
 use DOMElement;
 use DOMException;
 use DOMText;
-use Illuminate\Http\Response;
 use Qualp\Yii2XMLParser\Helpers\StringHelper;
 use Traversable;
 
@@ -30,7 +29,7 @@ class XmlResponseFormatter
             foreach ($data as $name => $value) {
                 if (is_int($name) && is_object($value)) {
                     $this->buildXml($element, $value);
-                } else if (is_array($value) || is_object($value)) {
+                } elseif (is_array($value) || is_object($value)) {
                     $child = new DOMElement($this->getValidXmlElementName($name));
                     $element->appendChild($child);
                     $this->buildXml($child, $value);
@@ -58,6 +57,7 @@ class XmlResponseFormatter
     {
         try {
             new DOMElement($name);
+
             return true;
         } catch (DOMException $e) {
             return false;
@@ -75,6 +75,7 @@ class XmlResponseFormatter
         if (is_float($value)) {
             return StringHelper::floatToString($value);
         }
+
         return (string) $value;
     }
 }
