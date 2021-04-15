@@ -4,10 +4,10 @@ namespace Qualp\Yii2XMLParser\Helpers;
 
 class StringHelper
 {
-
     /**
      * @param $path
      * @param string $suffix
+     *
      * @return string
      */
     public static function basename($path, $suffix = '')
@@ -25,6 +25,7 @@ class StringHelper
 
     /**
      * @param $number
+     *
      * @return string|string[]
      */
     public static function floatToString($number)

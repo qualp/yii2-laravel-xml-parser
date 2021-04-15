@@ -2,15 +2,9 @@
 
 namespace Qualp\Yii2XMLParser\Providers;
 
-use DOMDocument;
-use DOMElement;
-use DOMException;
-use DOMText;
 use Illuminate\Routing\ResponseFactory;
 use Illuminate\Support\ServiceProvider;
-use Qualp\Yii2XMLParser\Helpers\StringHelper;
 use Qualp\Yii2XMLParser\XmlResponseFormatter;
-use Traversable;
 
 class Yii2XMLParserServiceProvider extends ServiceProvider
 {
@@ -36,8 +30,7 @@ class Yii2XMLParserServiceProvider extends ServiceProvider
 
     protected function loadLaravelResponseMacros()
     {
-        ResponseFactory::macro('yii2Xml', function($xml, $status = 200, array $headers = [], $xmlRoot = 'response') {
-
+        ResponseFactory::macro('yii2Xml', function ($xml, $status = 200, array $headers = [], $xmlRoot = 'response') {
             if ($xml !== null) {
                 $xml = (new XmlResponseFormatter())->format($xml);
             }
